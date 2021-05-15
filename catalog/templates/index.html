@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Accueil de la bibliothèque locale</h1>
+
+<p>Bienvenue à la bibliothèque locale, un site web développé par <a href="https://github.com/bouriah/"> des exemples de tutorial</a> sur mon reseau de developpemnt .</p>
+<p>Le didacticiel montre comment créer un site Web et une application squelette Django, définir des mappages d'URL, des vues (y compris une liste générique et des vues détaillées), des modèles et des modèles.</p>
+
+
+
+
+<div>
+{% load static %}
+<img src="{% static "images/New-City-of-Perth-Library-interior-1.jpg" %}" alt="My image" style="width:1020px;height:540px;"/>
+</div>  
+
+<h2>Contenu dynamique</h2>
+<p>La bibliothèque dispose des enregistrements suivants:</p>
+
+<ul>
+<li><strong>Books:</strong> {{ num_books }}</li>
+<li><strong>Copies:</strong> {{ num_instances }}</li>
+<li><strong>Copies available:</strong> {{ num_instances_available }}</li>
+<li><strong>Authors:</strong> {{ num_authors }}</li>
+</ul>
+
+
+<p>Vous pouvez visite cette page {{ num_visits }} time{{ num_visits|pluralize }}.</p>
+
+{% endblock %}
